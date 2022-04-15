@@ -3,7 +3,7 @@ import yfinance as yf
 import pandas as pd
 import datetime
 import numpy as np
-import pandas_datareader as pdr
+
 
 st.title('Stock Predictor')
 
