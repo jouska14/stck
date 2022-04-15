@@ -23,6 +23,7 @@ end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 stocks = ('AAPL','GOOGL', 'MFST')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
+tickerDf = tickerData.history(period = '1d', start = start_date, end = end_date)#getting historical price
 
 #ticker info
 string_logo = '<img src=%s>' % tickerData.info['logo_url']
@@ -33,3 +34,6 @@ st.header('**%s**' % string_name)
 
 string_summary = tickerData.info['longBusinessSummary']
 st.info(string_summary)
+
+df = pd.DataFrame(tickerDf)
+st.write(df)
