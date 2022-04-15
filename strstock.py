@@ -23,7 +23,8 @@ end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
-tickerDf = tickerData.history(period = '1d', start = start_date, end = end_date)#getting historical price
+inter = st.slidebar.selectbox('Select Interval')
+tickerDf = tickerData.history(period = inter, start = start_date, end = end_date)#getting historical price
 
 #ticker info
 string_logo = '<img src=%s>' % tickerData.info['logo_url']
@@ -38,6 +39,6 @@ st.info(string_summary)
 df = pd.DataFrame(tickerDf)
 st.write(df)
 st.header('**Trends in Historical Data**')
-chart_width = st.expander(label="chart width").slider("", 1000, 2800, 1400) #arguments: label, min, default, max
+
 
 st.line_chart(tickerDf)
