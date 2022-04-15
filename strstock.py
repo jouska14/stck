@@ -21,9 +21,6 @@ st.sidebar.subheader('Choose Your Query Parameter ')
 start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
 end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 
-key = 'f67d7a932ef22db4d183e62b6ad9f8fbed103317'
+stocks = ('AAPL','GOOGL', 'MFST')
+st.sidebar.selectbox('Select',stocks)
 
-df = pdr.get_data_tiingo('AAPL','GOOGL',api_key = key)
-
-ticker_list = pdr.read_csv('AAPL.csv','GOOGL.csv')
-tickerSymbol = st.sidebar.selectbox('Stock Ticker',ticker_list)
