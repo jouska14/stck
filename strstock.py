@@ -23,7 +23,7 @@ end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
-interval = ('1D','5D','3M','6M','YTD','1Y','5Y')
+interval = (1D,5D,3M,6M,YTD,1Y,5Y)
 inter = st.sidebar.selectbox('Select Interval', interval)
 tickerDf = tickerData.history(period = inter, start = start_date, end = end_date)#getting historical price
 
