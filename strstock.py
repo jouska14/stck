@@ -38,4 +38,6 @@ st.info(string_summary)
 df = pd.DataFrame(tickerDf)
 st.write(df)
 st.header('**Trends in Historical Data**')
+chart_width = st.expander(label="chart width").slider("", 1000, 2800, 1400) #arguments: label, min, default, max
+
 st.line_chart(tickerDf)
