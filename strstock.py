@@ -5,3 +5,6 @@ import datetime
 import numpy as np
 
 st.title('Stock Predictor')
+" " " Created By Nehal , Sara And Alok
+" " " 
+
