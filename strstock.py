@@ -13,4 +13,4 @@ Shown are the stock price data for query companies!
 - App built by Nehal, Sara, Alok
 - Built in `Python` using `streamlit`,`yfinance`, `pandas` and `datetime`
 ''')
-st.write(---)
+st.write('---')
