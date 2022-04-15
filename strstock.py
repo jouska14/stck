@@ -15,9 +15,9 @@ st.markdown('''
 st.write('---')
 
 # Sidebar
-
-st.sidebar.selectbox('Apple', 'Google', 'Microsoft')
 st.sidebar.subheader('Choose Your Query Parameter ')
+st.sidebar.selectbox('Apple', 'Google', 'Microsoft')
+
 start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
 end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 
