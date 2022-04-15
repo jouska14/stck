@@ -4,7 +4,6 @@ import pandas as pd
 import datetime
 import numpy as np
 
-
 st.title('Stock Predictor')
 
 st.write('Shown are the stock price data for query companies!')
