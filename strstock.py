@@ -6,8 +6,8 @@ import numpy as np
 
 st.title('Stock Predictor')
 
+st.write('Shown are the stock price data for query companies!')
 st.markdown('''
-Shown are the stock price data for query companies!
 **Credits**
 - App built by Nehal, Sara, Alok
 - Built in `Python` using `streamlit`,`yfinance`, `pandas` and `datetime`
