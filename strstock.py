@@ -22,5 +22,6 @@ start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
 end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 
 stocks = ('AAPL','GOOGL', 'MFST')
-st.sidebar.selectbox('Select',stocks)
-
+tickerSymbol- st.sidebar.selectbox('Select',stocks)
+tickerData = yf.Ticker(tickerSymbol) #get ticker data
+st.write(tickerData)
