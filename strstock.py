@@ -37,4 +37,4 @@ st.info(string_summary)
 
 df = pd.DataFrame(tickerDf)
 st.write(df)
-st.caption('This is the historical date of ' tickerSymbol 'from ' start_date 'to' end_date)
+st.caption('This is the historical date of' st.write(tickerSymbol) 'from ' st.write(start_date) 'to' st.write(end_date)')
