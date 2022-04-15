@@ -23,9 +23,7 @@ end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
-interval = ('1d','5d','3mo','6mo','YTD','1y','5y')
-inter = st.sidebar.selectbox('Select Interval', interval)
-tickerDf = tickerData.history(period = inter, start = start_date, end = end_date)#getting historical price
+tickerDf = tickerData.history(period = "1mo", start = start_date, end = end_date)#getting historical price
 
 #ticker info
 string_logo = '<img src=%s>' % tickerData.info['logo_url']
