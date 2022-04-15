@@ -7,7 +7,6 @@ import numpy as np
 st.title('Stock Predictor')
 
 st.markdown('''
-          # Stock Price App
 Shown are the stock price data for query companies!
 **Credits**
 - App built by Nehal, Sara, Alok
@@ -15,4 +14,5 @@ Shown are the stock price data for query companies!
 ''')
 st.write('---')
 
-
+# Sidebar
+st.sidebar.subheader('Choose Your Query Parameter ')
