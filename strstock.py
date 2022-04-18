@@ -44,5 +44,5 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 df1 = df.reset_index()['Close']
-""" See the Stock prices bases on the Closing price """
+'''See the Stock prices bases on the Closing price '''
 st.pyplot(df1)
