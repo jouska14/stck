@@ -42,7 +42,9 @@ st.header('**Trends in Historical Data**')
 
 
 st.line_chart(tickerDf)
+ features = ('Open', 'Close', 'High','Low)
+f = st.selectbox('Select the Features',features)
 
-df1 = df.reset_index()['Close']
+df1 = df.reset_index()[features]
 '''See the Stock prices bases on the Closing price '''
-st.line_chart(tickerDf.Close)
+st.line_chart(tickerDf.features)
