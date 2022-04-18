@@ -3,6 +3,7 @@ import yfinance as yf
 import pandas as pd
 import datetime
 import numpy as np
+import matplotlib.pyplot as plt
 
 st.title('Stock Predictor')
 
@@ -43,4 +44,5 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 df1 = df.reset_index()['Close']
-st.write(df1)
+""" See the Stock prices bases on the Closing price """
+plt.plot(df1)
