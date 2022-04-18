@@ -41,3 +41,6 @@ st.header('**Trends in Historical Data**')
 
 
 st.line_chart(tickerDf)
+
+training_set = tickerDF.iloc[:,1:2]
+st.write(training_set)
