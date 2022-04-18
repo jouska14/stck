@@ -47,5 +47,5 @@ f = st.selectbox('Select the Features',features)
 
 df1 = df.reset_index()[f]
 p = tickerDF.f
-'''See the Stock prices bases on the ''' st.wrie(f)''' price '''
+'''See the Stock prices bases on the ''' st.write(f)''' price '''
 st.line_chart(p)
