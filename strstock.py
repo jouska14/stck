@@ -45,4 +45,4 @@ st.line_chart(tickerDf)
 
 df1 = df.reset_index()['Close']
 '''See the Stock prices bases on the Closing price '''
-st.line_char(tickerDf.Close)
+st.line_chart(tickerDf.Close)
