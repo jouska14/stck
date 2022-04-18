@@ -47,4 +47,4 @@ f = st.selectbox('Select the Features',features)
 
 df1 = df.reset_index()[f]
 '''See the Stock prices bases on the Closing price '''
-st.line_chart(tickerDf.f)
+st.line_chart(f)
