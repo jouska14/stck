@@ -40,8 +40,10 @@ df = pd.DataFrame(tickerDf)
 st.write(df)
 st.header('**Trends in Historical Data**')
 
-
+chart = st.checkbox('Show Dataframe')
+if chart:
 st.line_chart(tickerDf)
+
 features = ('Open', 'Close', 'High','Low')
 f = st.selectbox('Select the Features',features)
 
