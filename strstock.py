@@ -38,7 +38,7 @@ st.info(string_summary)
 
 df = pd.DataFrame(tickerDf)
 
-chck = st.checkbo('Show dataframe')
+chck = st.checkbox('Show dataframe')
 if chck:
     st.write(df)
     
