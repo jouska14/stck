@@ -45,6 +45,6 @@ if chck:
 st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
-feat = ('Open','Close','High','Low')
-feature = st.selectbox('Want to see Trends for which feature ?',feat)
+df.reset_index()['Close','Open']
+st.write(df)
 
