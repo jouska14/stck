@@ -45,7 +45,5 @@ if chck:
 st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
-features = ('Open', 'Close', 'High','Low')
-f = st.selectbox('Select the Features',features)
 
 
