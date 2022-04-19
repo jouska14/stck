@@ -1,7 +1,7 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import datetime
+from datetime import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,7 +19,7 @@ st.write('---')
 st.sidebar.subheader('Choose Your Query Parameter ')
 
 start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
-end_date = datetime.now()
+end_date = datetime.()today
 
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
