@@ -19,7 +19,7 @@ st.write('---')
 st.sidebar.subheader('Choose Your Query Parameter ')
 
 start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
-end_date = st.sidebar.date_input("End Date" , datetime.date(2022,4,15))
+end_date = datetime.now()
 
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol= st.sidebar.selectbox('Select',stocks)
