@@ -46,8 +46,9 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 plt.figure(figsize=(14,14))
-st.pyplot(stk_data['Close'])
-st.pyplot(stk_data['Open'])
-st.pyplot(stc_data['High'])\
-st.pyplot(stk_data['Volume'])
+plt.plot(stk_data['Close'])
+plt.title('Historical Stock Value')
+plt.xlabel('Date')
+plt.ylabel('Stock Price')
+plt.show()
 
