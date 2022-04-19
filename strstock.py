@@ -46,6 +46,6 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 fig = plt.figure(figsize=(14,14))
-st.pyplot(fig)
+st.pyplot(df['Close'])
 
 
