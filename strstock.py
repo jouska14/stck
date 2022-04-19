@@ -45,6 +45,9 @@ if chck:
 st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
-df.reset_index()['Close','Open']
-st.write(df)
+plt.figure(figsize=(14,14))
+plt.plot(stk_data['Close'])
+plt.plot(stk_data['Open'])
+plt.plot(stc_data['High'])\
+plt.plot(stk_data['Volume'])
 
