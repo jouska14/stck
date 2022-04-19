@@ -46,5 +46,5 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 feat = ('Open','Close','High','Low')
-feature = st.selectbox('Want to see Trends in which feature,feat)
+feature = st.selectbox('Want to see Trends in which feature',feat)
 
