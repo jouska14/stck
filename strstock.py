@@ -45,7 +45,7 @@ if chck:
 st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
-plt.figure(figsize=(14,14))
-st.pyplot(tickerDf['Close'])
+fig = plt.figure(figsize=(14,14))
+st.pyplot(fig)
 
 
