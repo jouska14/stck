@@ -37,12 +37,13 @@ string_summary = tickerData.info['longBusinessSummary']
 st.info(string_summary)
 
 df = pd.DataFrame(tickerDf)
-st.write(df)
-st.header('**Trends in Historical Data**')
 
-chart = st.checkbox('Show Dataframe')
-if chart:
-    st.line_chart(tickerDf)
+chck = st.checkbo('Show dataframe')
+if chck:
+    st.write(df)
+    
+st.header('**Trends in Historical Data**')
+st.line_chart(tickerDf)
 
 features = ('Open', 'Close', 'High','Low')
 f = st.selectbox('Select the Features',features)
