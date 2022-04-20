@@ -46,7 +46,7 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 '''# Shown are the Stock *closing price* #'''
- st.line_chart(tickerDf.Close)
+st.line_chart(tickerDf.Close)
 
 
 
