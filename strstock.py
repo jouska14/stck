@@ -45,6 +45,8 @@ if chck:
 st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
+'''# Shown are the Stock *closing price* #'''
+ st.line_chart(tickerDf.Close)
 
 
 
