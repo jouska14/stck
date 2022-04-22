@@ -4,6 +4,7 @@ import pandas as pd
 import datetime
 import numpy as np
 import matplotlib.pyplot as plt
+import altair as alt
 
 st.title('Stock Predictor')
 
@@ -47,6 +48,7 @@ st.line_chart(tickerDf)
 
 '''# Shown are the Stock *closing price* #'''
 st.line_chart(tickerDf.Close)
-
+plt.ylabel('Close')
+plt.xlabel(None)
 
 
