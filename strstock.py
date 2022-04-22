@@ -38,6 +38,11 @@ string_summary = tickerData.info['longBusinessSummary']
 st.info(string_summary)
 
 df = pd.DataFrame(tickerDf)
+df['date'] = pd.to_datetime(df['date'])
+
+df = df.style.format({'date': lambda x: "{}".format(x.strftime('%m/%d/%Y %H:%M:%S'))}).set_table_styles('styles')
+
+st.dataframe(df)
 
 chck = st.checkbox('Show dataframe')
 if chck:
@@ -48,4 +53,5 @@ st.line_chart(tickerDf)
 
 '''# Shown are the Stock *closing price* #'''
 st.line_chart(tickerDf.Close)
+
 
