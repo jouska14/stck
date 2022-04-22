@@ -38,11 +38,7 @@ string_summary = tickerData.info['longBusinessSummary']
 st.info(string_summary)
 
 df = pd.DataFrame(tickerDf)
-df['Date'] = pd.to_datetime(df['Date'])
 
-df = df.style.format({'Date': lambda x: "{}".format(x.strftime('%m/%d/%Y %H:%M:%S'))}).set_table_styles('styles')
-
-st.dataframe(df)
 
 chck = st.checkbox('Show dataframe')
 if chck:
