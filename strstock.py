@@ -47,7 +47,7 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 '''# Shown are the Stock *closing price* #'''
-alt.Chart(tickerDf).encode(
+alt.Chart(tickerDf).mark_line().encode(
     x='date',
     y='price'
 ).transform_filter(alt.datum.symbol == tickerSymbol)
