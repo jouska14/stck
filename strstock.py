@@ -23,7 +23,7 @@ start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
 end_date = datetime.date.today()
 
 stocks = ('AAPL','GOOGL', 'MSFT')
-tickerSymbol= st.sidebar.selectbox('Select',stocks)
+= st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
 tickerDf = tickerData.history(period = "1mo", start = start_date, end = end_date)#getting historical price
 
@@ -47,8 +47,8 @@ st.header('**Trends in Historical Data**')
 st.line_chart(tickerDf)
 
 '''# Shown are the Stock *closing price* #'''
-st.line_chart(tickerDf.Close)
-plt.ylabel('Close')
-plt.xlabel(None)
-
+alt.Chart(tickerDf).encode(
+    x='date',
+    y='price'
+).transform_filter(alt.datum.symbol == tickerSymbol)
 
