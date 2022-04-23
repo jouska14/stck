@@ -45,4 +45,5 @@ def plot_raw_data():
     fig.layouts.update(title_text="Time Series Data")
     st.plotly_chart(fig)
   
-  plot_raw_data()
+  
+plot_raw_data()
