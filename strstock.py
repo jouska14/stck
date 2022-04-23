@@ -19,10 +19,21 @@ st.write('---')
 # Sidebar
 st.sidebar.subheader('Choose Your Query Parameter ')
 start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
-end_date = datetime.date.today().strftime("%Y-%m-%d")
+end_date = datetime.date.strftime("%Y-%m-%d").today()
+
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
-tickerData = yf.Ticker(tickerSymbol) #get ticker data
-tickerDf = tickerData.history(period = "1mo", start = start_date, end = end_date)#getting historical price
 
-st.write(tickerDf)
+@st.cache
+def load_data(ticker):
+  data = yf.download(ticker,start_date,end_date)
+  data.reset_index(inplcae=True)
+  return data
+
+
+data_load_state = st.text("Load data...")
+data = load_data(tickerSymbol)
+data_load_state.text("Loading data.... Done!")
+
+st.subheader('Raw Data')
+st.write(data)
