@@ -42,7 +42,7 @@ def plot_raw_data():
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='Stock-Open'))
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Stock-Close'))
-    fig.layouts.update(title_text="Time Series Data")
+    fig.update_layout(title="This is the Trend in the Raw Data")
     st.plotly_chart(fig)
   
   
