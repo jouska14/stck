@@ -1,7 +1,7 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-from datetime import datetime
+from datetime import datetime,date,time
 import numpy as np
 from plotly import graph_objs as go
 
@@ -19,8 +19,8 @@ st.write('---')
 # Sidebar
 st.sidebar.subheader('Choose Your Query Parameter ')
 
-start_date = st.sidebar.date_input("Start Date", datetime.datetime.strptime('%Y-%m-%d'))
-end_date = datetime.today().strptime('%Y-%m-%d')
+start_date = st.sidebar.date_input("Start Date", datetime.date.strptime('%Y-%m-%d'))
+end_date = datetime.date.today().strptime('%Y-%m-%d')
 
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
