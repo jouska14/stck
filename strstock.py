@@ -50,4 +50,4 @@ st.line_chart(tickerDf)
 st.line_chart(tickerDf.Close)
 
 
-'
+
