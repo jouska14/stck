@@ -1,10 +1,10 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-import datetime
+from datetime import date
 import numpy as np
-import matplotlib.pyplot as plt
-import altair as alt
+from plotly import graph_objs as go
+
 
 st.title('Stock Predictor')
 
@@ -19,8 +19,8 @@ st.write('---')
 # Sidebar
 st.sidebar.subheader('Choose Your Query Parameter ')
 
-start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1),format="DD/MM/YYYY")
-end_date = (datetime.date.today(),format="DD/MM/YYYY")
+start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1).strftime("%Y-%m-%d"))
+end_date = datetime.date.today()..strftime("%Y-%m-%d")
 
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
