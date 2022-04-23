@@ -1,7 +1,7 @@
 import streamlit as st
 import yfinance as yf
 import pandas as pd
-from datetime import date
+import datetime
 import numpy as np
 from plotly import graph_objs as go
 
@@ -19,7 +19,7 @@ st.write('---')
 # Sidebar
 st.sidebar.subheader('Choose Your Query Parameter ')
 format = 'YYYY-MM-D'
-start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
+start_date = st.sidebar.date_input("Start Date", datetime.date("2019,1,1"))
 end_date = datetime.date.today().strftime("%Y-%m-%d")
 
 stocks = ('AAPL','GOOGL', 'MSFT')
@@ -51,3 +51,4 @@ st.line_chart(tickerDf)
 st.line_chart(tickerDf.Close)
 
 
+'
