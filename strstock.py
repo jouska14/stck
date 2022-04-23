@@ -37,3 +37,12 @@ data_load_state.text("Loading data.... Done!")
 
 st.subheader('Raw Data')
 st.write(data)
+
+def plot_raw_data():
+  fig= go.Figure()
+  fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='Stock-Open'))
+  fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Stock-Close'))
+  fig.layouts.update(title_text="Time Series Data")
+  st,plotly_chart(fig)
+  
+  plot_raw_data()
