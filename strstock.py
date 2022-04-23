@@ -27,7 +27,7 @@ tickerSymbol = st.sidebar.selectbox('Select',stocks)
 @st.cache
 def load_data(ticker):
   data = yf.download(ticker,start_date,end_date)
-  data.reset_index(inplcae=True)
+  data.reset_index(inplace=True)
   return data
 
 
