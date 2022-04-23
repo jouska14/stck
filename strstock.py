@@ -19,7 +19,7 @@ st.write('---')
 # Sidebar
 st.sidebar.subheader('Choose Your Query Parameter ')
 
-start_date = st.sidebar.date_input("Start Date", daetetime.date(2019,1,1)
+start_date = st.sidebar.date_input("Start Date", datetime.date(2019,1,1))
 end_date = datetime.date.today()
 
 stocks = ('AAPL','GOOGL', 'MSFT')
