@@ -26,28 +26,4 @@ tickerSymbol = st.sidebar.selectbox('Select',stocks)
 tickerData = yf.Ticker(tickerSymbol) #get ticker data
 tickerDf = tickerData.history(period = "1mo", start = start_date, end = end_date)#getting historical price
 
-#ticker info
-string_logo = '<img src=%s>' % tickerData.info['logo_url']
-st.markdown(string_logo, unsafe_allow_html=True)
-
-string_name = tickerData.info['longName']
-st.header('**%s**' % string_name)
-
-string_summary = tickerData.info['longBusinessSummary']
-st.info(string_summary)
-
-df = pd.DataFrame(tickerDf)
-
-
-chck = st.checkbox('Show dataframe')
-if chck:
-    st.write(df)
-    
-st.header('**Trends in Historical Data**')
-st.line_chart(tickerDf)
-
-'''# Shown are the Stock *closing price* #'''
-st.line_chart(tickerDf.Close)
-
-
-
+st.write(tickerDf)
