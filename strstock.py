@@ -10,8 +10,6 @@ import tensorflow as tf
 from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dense
 from tensorflow.python.keras.layers import LSTM
-import math
-
 
 st.title('Stock Predictor')
 
@@ -114,9 +112,9 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-st.pyplot(scaler.inverse_transform(data_close))
-st.pyplot(trainPredictPlot)
-st.pyplot(testPredictPlot)
+st.plotly_chart(scaler.inverse_transform(data_close))
+st.plotly_chart(trainPredictPlot)
+st.plotly_chart(testPredictPlot)
 st.show()
                      
                      
