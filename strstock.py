@@ -59,4 +59,4 @@ data_close = scaler.fit_transform(np.array(data_close).reshape(-1,1))
 training_size = int(len(data_close)*0.75)
 test_size = len(data_close)-training_size
 train_data, test_data = data_close[0:training_size,:], data_close[training_size:len(data_close)]
-st.write(train_data)
+st.write(test_data)
