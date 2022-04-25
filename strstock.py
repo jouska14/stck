@@ -56,7 +56,35 @@ data_close = data['Close']
 scaler = MinMaxScaler(feature_range = (0,1))
 data_close = scaler.fit_transform(np.array(data_close).reshape(-1,1))
 
+#Split the data into train and test split
 training_size = int(len(data_close)*0.75)
 test_size = len(data_close)-training_size
 train_data, test_data = data_close[0:training_size,:], data_close[training_size:len(data_close)]
-st.write(test_data)
+
+def create_dataset(dataset, time_step = 1)
+    dataX, dataY = [], []
+    for i in range(len(ataset) - time_step-1):
+        a = dataset[i:(i+time_step),0]
+        dataX.append(a)
+        dataY.append(dataset[i+time_step, 0]
+     return np.array(dataX), np.array(dataY)
+                     
+time_step = 100
+x_train, y_train = create_dataset(train_data, time_step)
+x_test, y_test = create_dataset(test_data, time_step)
+                     
+#reshape the input to be [sample, time steps, features] which is the requirement of LSTM
+x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
+x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
+st.write(x_train)
+#Create the LSTM model
+
+                     
+                     
+                     
+                     
+    
+    
+    
+    
+    
