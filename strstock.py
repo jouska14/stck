@@ -61,7 +61,7 @@ training_size = int(len(data_close)*0.75)
 test_size = len(data_close)-training_size
 train_data, test_data = data_close[0:training_size,:], data_close[training_size:len(data_close)]
 
-def create_dataset(dataset, time_step = 1)
+def create_dataset(dataset, time_step = 1):
     dataX, dataY = [], []
     for i in range(len(ataset) - time_step-1):
         a = dataset[i:(i+time_step),0]
