@@ -103,17 +103,17 @@ math.sqrt(mean_squared_error(y_train, train_predict))
 
 #Shift train prediction for plotting
 look_back = 100
-trainPredictPlot = np.empty_like(df_close)
+trainPredictPlot = np.empty_like(data_close)
 trainPredictPlot[:,:] = np.nan
 trainPredictPlot[look_back:len(train_predict) + look_back, :] = train_predict
 
 #Shift test prediction for plotting
-testPredictPlot = np.empty_like(df_close)
+testPredictPlot = np.empty_like(data_close)
 testPredictPlot[:,:] = np.nan
-testPredictPlot[len(train_predict) + (look_back * 2)+1:len(df_close) - 1, :] = test_predict
+testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-st.pyplot(scaler.inverse_transform(df_close))
+st.pyplot(scaler.inverse_transform(data_close))
 st.pyplot(trainPredictPlot)
 st.pyplot(testPredictPlot)
 
