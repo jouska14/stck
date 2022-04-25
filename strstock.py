@@ -116,8 +116,7 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 st.pyplot(scaler.inverse_transform(data_close))
 st.pyplot(trainPredictPlot)
 st.pyplot(testPredictPlot)
-
-                     
+st.show()
                      
                      
     
