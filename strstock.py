@@ -85,7 +85,8 @@ model.add(LSTM(50, return_sequences= True))
 model.add(LSTM(50))
 model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
-st.write(model.summary())         
+st.write(model.summary())    
+          
                      
                      
                      
