@@ -48,4 +48,4 @@ def plot_raw_data():
   
 plot_raw_data()
 data_close = data['Close']
-st.pltplot(data_close)
+st.pyplot(data_close)
