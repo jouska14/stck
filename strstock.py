@@ -67,7 +67,7 @@ def create_dataset(dataset, time_step = 1):
         a = dataset[i:(i+time_step),0]
         dataX.append(a)
         dataY.append(dataset[i+time_step, 0]
- return np.array(dataX), np.array(dataY)
+        return np.array(dataX), np.array(dataY)
                      
 time_step = 100
 x_train, y_train = create_dataset(train_data, time_step)
