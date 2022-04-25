@@ -4,6 +4,7 @@ import pandas as pd
 import datetime
 import numpy as np
 from plotly import graph_objs as go
+import matplotlib.pyplot as plt
 
 
 st.title('Stock Predictor')
@@ -47,6 +48,4 @@ def plot_raw_data():
   
 plot_raw_data()
 data_close = data['Close']
-plot_raw_data(data_close)
-
-
+plt.plot(df_close)
