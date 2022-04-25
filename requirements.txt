@@ -19,7 +19,7 @@ requests==2.27.1
 
 stack-data==0.2.0
 streamlit==1.8.1
-
+scikit-learn==1.0.2
 yahoo-finance==1.4.0
 yfinance==0.1.70
 
