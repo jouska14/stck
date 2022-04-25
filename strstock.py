@@ -4,7 +4,12 @@ import pandas as pd
 import datetime
 import numpy as np
 from plotly import graph_objs as go
-import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+import tensorflow as tf
+from tensorflow.python.keras.models import Sequential
+from tensorflow.python.keras.layers import Dense
+from tensorflow.python.keras.layers import LSTM
 
 
 st.title('Stock Predictor')
@@ -48,4 +53,6 @@ def plot_raw_data():
   
 plot_raw_data()
 data_close = data['Close']
-st.line_chart(data.Close)
+scaler = MinMaxScaler(feature_renage = (0,1))
+data_close = scaler.fit_transform(np.array(data_close).reshape(-1,1))
+st.write(data_close.shape)
