@@ -48,4 +48,4 @@ def plot_raw_data():
   
 plot_raw_data()
 data_close = data['Close']
-plt.plot(df_close)
+plt.plot(data_close)
