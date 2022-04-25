@@ -66,7 +66,7 @@ def create_dataset(dataset, time_step = 1):
     for i in range(len(dataset) - time_step - 1):
         a = dataset[i:(i+time_step),0]
         dataX.append(a)
-        dataY.append(dataset[i+time_step, 0]
+        dataY.append(dataset[i+time_step, 0])
     return np.array(dataX), np.array(dataY)
                      
 time_step = 100
