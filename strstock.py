@@ -63,11 +63,11 @@ train_data, test_data = data_close[0:training_size,:], data_close[training_size:
 
 def create_dataset(dataset, time_step = 1):
     dataX, dataY = [], []
-    for i in range(len(ataset) - time_step-1):
+    for i in range(len(dataset) - time_step - 1):
         a = dataset[i:(i+time_step),0]
         dataX.append(a)
         dataY.append(dataset[i+time_step, 0]
-     return np.array(dataX), np.array(dataY)
+    return np.array(dataX), np.array(dataY)
                      
 time_step = 100
 x_train, y_train = create_dataset(train_data, time_step)
