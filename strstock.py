@@ -79,8 +79,13 @@ x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
 st.write(x_train)
                      
 #Create the LSTM model
-
-                     
+model = Sequential() 
+model.add(LSTM(50 ,return_sequences = True, imput_Shape = (100,1))
+model.add(LSTM(50, return_sequences= True))
+model.add(LSTM(50))
+model.add(Dense(1))
+model.compile(loss = 'mean_squared_error', optimizer = 'adam')
+st.write(model.summary())         
                      
                      
                      
