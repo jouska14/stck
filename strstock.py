@@ -53,6 +53,6 @@ def plot_raw_data():
   
 plot_raw_data()
 data_close = data['Close']
-scaler = MinMaxScaler(feature_renage = (0,1))
+scaler = MinMaxScaler(feature_range = (0,1))
 data_close = scaler.fit_transform(np.array(data_close).reshape(-1,1))
 st.write(data_close.shape)
