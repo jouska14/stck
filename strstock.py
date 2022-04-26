@@ -113,11 +113,8 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-fig = go.Figure(scaler.inverse_transform(data_close))
-fig = go.Figure(trainPredictPlot)
-fig = go.Figure(testPredictPlot)
-st.show()
-                     
+st.write(scaler.inverse_transform(data_close))
+
                      
     
     
