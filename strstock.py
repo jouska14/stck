@@ -62,6 +62,7 @@ training_size = int(len(data_close)*0.75)
 test_size = len(data_close)-training_size
 train_data, test_data = data_close[0:training_size,:], data_close[training_size:len(data_close)]
 
+@st.cache
 def create_dataset(dataset, time_step = 1):
     dataX, dataY = [], []
     for i in range(len(dataset) - time_step - 1):
@@ -114,14 +115,11 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-a = alt.Chart.mark_line().encode(x= (scaler.inverse_transform(data_close),
-                                 color='Origin')
+a = alt.Chart.mark_line().encode(x= (scaler.inverse_transform(data_close),color='Origin')
                                  
-b = alt.Chart.markline().encode(x =trainPredictPlot,
-                                color='Orange')
+b = alt.Chart.markline().encode(x = trainPredictPlot, color='Orange')
                               
-c = alt.Chart.markline().encode(x = testPredictPlot ,
-                                color='Green')
+c = alt.Chart.markline().encode(x = testPredictPlot , color='Green')
                                  
 d = alt.layer(a, b,c)  
 st.atlair_chart(d , user_container_width = False)
