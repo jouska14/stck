@@ -115,7 +115,7 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-a = alt.Chart.mark_line().encode(x= (scaler.inverse_transform(data_close),color='Origin')
+a = alt.Chart.mark_line().encode(x = (scaler.inverse_transform(data_close),color='Blue')
                                  
 b = alt.Chart.markline().encode(x = trainPredictPlot, color='Orange')
                               
