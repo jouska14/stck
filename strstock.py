@@ -76,7 +76,7 @@ x_test, y_test = create_dataset(test_data, time_step)
 #reshape the input to be [sample, time steps, features] which is the requirement of LSTM
 x_train = x_train.reshape(x_train.shape[0], x_train.shape[1], 1)
 x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
-st.write(x_train)
+
                      
 #Create the LSTM model
 model = Sequential() 
