@@ -114,11 +114,14 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-a = alt.Chart.mark_line().encode(x= (scaler.inverse_transform(data_close)
+a = alt.Chart.mark_line().encode(x= (scaler.inverse_transform(data_close),
                                  color='Origin')
-b = alt.Chart.markline().encode(x =trainPredictPlot color='Orange')
+                                 
+b = alt.Chart.markline().encode(x =trainPredictPlot,
+                                color='Orange')
                               
-c = alt.Chart.markline().encode(x = testPredictPlot color='Green')
+c = alt.Chart.markline().encode(x = testPredictPlot ,
+                                color='Green')
                                  
 d = alt.layer(a, b,c)  
 st.atlair_chart(d , user_container_width = False)
