@@ -118,9 +118,9 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 it = scaler.inverse_transform(data_close)
 a = alt.Chart(it).mark_line().encode(x ='Close', color = 'Blue')
                                  
-b = alt.Chart(trainPredictPlot).markline().encode(x = 'Close', color='Orange')
+b = alt.Chart(trainPredictPlot).mark_line().encode(x = 'Close', color='Orange')
                               
-c = alt.Chart(testPredictPlot).markline().encode(x = 'Close' , color='Green')
+c = alt.Chart(testPredictPlot).mark_line().encode(x = 'Close' , color='Green')
                                  
 d = alt.layer(a, b,c)  
 st.atlair_chart(d , user_container_width = False)
