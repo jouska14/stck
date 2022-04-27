@@ -117,6 +117,8 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 #Plot baseline and predictions
 fig =  px.line(scaler.inverse_transform(data_close),
                x = 'Close')
+fig.add_trace(go.Scatter(x=trainPredictPlot)
 st.plotly_chart(fig)
+
     
     
