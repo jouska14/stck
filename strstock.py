@@ -122,8 +122,8 @@ st.write(testPredictPlot)
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(itdc, x  = scaler.inverse_transform(data_close) ,y='index')
-fig.add_scatter(trainPredictPlot , x = 'trainPredictPlot' )
-fig.add_scatter(testPredictPlot, x = 'testPredictPlot' )
+fig.add_scatter(trainPredictPlot[100:4398] , x = 'trainPredictPlot' )
+fig.add_scatter(testPredictPlot[4500:], x = 'testPredictPlot' )
 plot.show()
 
     
