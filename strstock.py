@@ -116,15 +116,12 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 
 #Plot baseline and predictions
 it = scaler.inverse_transform(data_close)
-a = alt.Chart(it).mark_line().encode(x ='Close').configure_mark(
-    color='blue'
-)
+a = alt.Chart(it).mark_line().encode(x ='Close', y='Date' ,color='blue')
+
                                  
-b = alt.Chart(trainPredictPlot).mark_line().encode(x = 'Close').configure_mark(
-    color='orange'
-)                            
-c = alt.Chart(testPredictPlot).mark_line().encode(x = 'Close') .configure_mark(
-    color='green')
+b = alt.Chart(trainPredictPlot).mark_line().encode(x = 'Close', y ='Date', color='orange')   
+
+c = alt.Chart(testPredictPlot).mark_line().encode(x = 'Close', y ='Date', color='green')
                                  
 d = alt.layer(a, b,c)  
 st.altair_chart(d , use_container_width = False)
