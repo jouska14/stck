@@ -119,7 +119,6 @@ itdc.reset_index(inplace=True)
 st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
-
-
-    
+fig = px.line(itdc, x='index' y='0')
+plot.show() 
     
