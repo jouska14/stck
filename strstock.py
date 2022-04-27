@@ -56,7 +56,7 @@ def plot_raw_data():
 plot_raw_data()
 data_close = data['Close']
 scaler = MinMaxScaler(feature_range = (0,1))
-data_close = pd.Dataframe(scaler.fit_transform(np.array(data_close).reshape(-1,1)))
+data_close = pd.DataFrame(scaler.fit_transform(np.array(data_close).reshape(-1,1)))
 
 #Split the data into train and test split
 training_size = int(len(data_close)*0.75)
@@ -97,8 +97,8 @@ train_predict = model.predict(x_train)
 test_predict = model.predict(x_test)
 
 #Transform back to original form
-train_predict = pd.Dataframe(scaler.inverse_transform(train_predict))
-test_predict = pd.Dataframe(scaler.inverse_transform(test_predict))
+train_predict = pd.DataFrame(scaler.inverse_transform(train_predict))
+test_predict = pd.DataFrame(scaler.inverse_transform(test_predict))
 
 #Calculate RMSE performance metrics
 math.sqrt(mean_squared_error(y_train, train_predict))
@@ -114,7 +114,7 @@ trainPredictPlot[look_back:len(train_predict) + look_back, :] = train_predict
 testPredictPlot = np.empty_like(data_close)
 testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
-itdc = pd.Dataframe(scaler.inverse_transform(data_close))
+itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 itdc.reset_index(inplace=True) 
 st.write(itdc)
 #Plot baseline and predictions
