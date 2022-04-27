@@ -4,6 +4,7 @@ import altair as alt
 import pandas as pd
 import datetime
 import numpy as np
+import plotly.express as px
 from plotly import graph_objs as go
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import mean_squared_error
