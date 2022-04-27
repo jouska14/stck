@@ -115,17 +115,8 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 
 #Plot baseline and predictions
-it = scaler.inverse_transform(data_close)
-a = alt.Chart(it).mark_line().encode(x ='Close', y='Date')
-
-                                 
-b = alt.Chart(trainPredictPlot).mark_line().encode(x = 'Close', y ='Date')   
-
-c = alt.Chart(testPredictPlot).mark_line().encode(x = 'Close', y ='Date')
-                                 
-d = alt.layer(a, b,c)  
-st.altair_chart(d , use_container_width = False)
-    
-    
+fig =  px.line(scaler.inverse_transform(data_close),
+               x = 'Close')
+st.plotly_chart(fig)
     
     
