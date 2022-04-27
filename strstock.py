@@ -90,7 +90,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=10, batch_size=64, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=64, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
@@ -117,7 +117,8 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 
 #Plot baseline and predictions
 st.write('forecast data')
-fig = px.line(scaler.inverse_transform(data_close), x = [0],y='Date')
+data_close.reset
+fig = px.line(data, x  = scaler.inverse_transform(data_close) ,y='Date')
 fig.add_scatter(x = 'trainPredictPlot' , y='Date')
 fig.add_scatter(x = 'testPredictPlot' , y='Date' )
 plot.show()
