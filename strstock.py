@@ -123,7 +123,7 @@ b = alt.Chart(trainPredictPlot).mark_line().encode(x = 'Close', color='Orange')
 c = alt.Chart(testPredictPlot).mark_line().encode(x = 'Close' , color='Green')
                                  
 d = alt.layer(a, b,c)  
-st.atlair_chart(d , user_container_width = False)
+st.altair_chart(d , user_container_width = False)
     
     
     
