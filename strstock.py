@@ -117,6 +117,8 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 itdc.reset_index(inplace=True) 
 st.write(itdc)
+st.write(trainPredictPlot)
+st.write(testPredictPlot)
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(itdc, x  = scaler.inverse_transform(data_close) ,y='index')
