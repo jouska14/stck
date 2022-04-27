@@ -118,8 +118,8 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(data, x  = scaler.inverse_transform(data_close) ,y=data['Date'])
-fig.add_scatter(data , x = 'trainPredictPlot' , y=data['Date'])
-fig.add_scatter(data , x = 'testPredictPlot' , y=data['Date'] )
+fig.add_scatter(data , x = 'trainPredictPlot' )
+fig.add_scatter(data , x = 'testPredictPlot' )
 plot.show()
 
     
