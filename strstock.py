@@ -116,7 +116,7 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 
 #Plot baseline and predictions
 it = scaler.inverse_transform(data_close)
-a = alt.Chart(it).mark_line().encode(x = (scaler.inverse_transform(data_close)), color = 'Blue')
+a = alt.Chart(it).mark_line().encode(x = it), color = 'Blue')
                                  
 b = alt.Chart(trainPredictPlot).markline().encode(x = trainPredictPlot, color='Orange')
                               
