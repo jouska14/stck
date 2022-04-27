@@ -117,8 +117,8 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 
 #Plot baseline and predictions
 st.write('forecast data')
-fig1 = plot_plotly(scaler.inverse_transform(data_close))
-st.plotly_chart(fig1)
+plot = px.line(scaler.inverse_transform , x = 'Close')
+plot.show()
 
     
     
