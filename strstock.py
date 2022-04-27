@@ -119,9 +119,9 @@ itdc.reset_index(inplace=True)
 st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
-fig = px.line(data, x  = scaler.inverse_transform(data_close) ,y=data['Date'])
-fig.add_scatter(data , x = 'trainPredictPlot' )
-fig.add_scatter(data , x = 'testPredictPlot' )
+fig = px.line(itdc, x  = scaler.inverse_transform(data_close) ,y='index')
+fig.add_scatter(trainPredictPlot , x = 'trainPredictPlot' )
+fig.add_scatter(testPredictPlot, x = 'testPredictPlot' )
 plot.show()
 
     
