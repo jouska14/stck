@@ -1,6 +1,5 @@
 import streamlit as st
 import yfinance as yf
-import altair as alt
 import pandas as pd
 import datetime
 import numpy as np
@@ -172,4 +171,4 @@ dp2 = scaler.inverse_transform(lst_output)
 fig = go.Figure()
 fig.add_trace(go.Scatter(x= day_new, y=dp1, mode='lines'))
 fig.add_trace(go.Scatter(x = day_pred, y=dp2 ,mode = 'lines'))
-fig.show()
+st.plotly_chart(fig)
