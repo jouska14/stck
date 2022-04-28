@@ -32,13 +32,13 @@ stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
 
 # Ticker information
-string_logo = '<img src=%s>' % tickerData.info['logo_url']
+string_logo = '<img src=%s>' % tickerSymbol.info['logo_url']
 st.markdown(string_logo, unsafe_allow_html=True)
 
-string_name = tickerData.info['longName']
+string_name = tickerSymbol.info['longName']
 st.header('**%s**' % string_name)
 
-string_summary = tickerData.info['longBusinessSummary']
+string_summary = tickerSymbol.info['longBusinessSummary']
 st.info(string_summary)
 
 @st.cache
