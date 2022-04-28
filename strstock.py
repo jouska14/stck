@@ -120,6 +120,9 @@ st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(itdc, x=data['Date'], y=['index', 0], color="Close")
-
 st.write(fig)
+fig2 = m.plot_components(trainPredictPlot)
+st.write(fig2)
+
+
     
