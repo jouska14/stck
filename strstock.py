@@ -170,7 +170,7 @@ dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 fig = px.line(        
         data_close,#Data Frame
-        x = day_new[0], #Columns from the data frame
+        x = day_new[, #Columns from the data frame
  )
-px.add_trace(x = day_pred[0])
+#px.add_trace(x = day_pred[0])
 st.plotly_chart(fig)
