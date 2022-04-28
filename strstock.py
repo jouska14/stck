@@ -70,7 +70,7 @@ def create_dataset(dataset, time_step = 1):
         dataY.append(dataset[i+time_step, 0])
     return np.array(dataX), np.array(dataY)
                      
-time_step = 100
+time_step = 500
 x_train, y_train = create_dataset(train_data, time_step)
 x_test, y_test = create_dataset(test_data, time_step)
                      
@@ -81,7 +81,7 @@ x_test = x_test.reshape(x_test.shape[0], x_test.shape[1], 1)
                      
 #Create the LSTM model
 model = Sequential() 
-model.add(LSTM(50 ,return_sequences = True, input_shape = (100,1)))
+model.add(LSTM(50 ,return_sequences = True, input_shape = (500,1)))
 model.add(LSTM(50, return_sequences= True))
 model.add(LSTM(50))
 model.add(Dense(1))
@@ -103,7 +103,7 @@ math.sqrt(mean_squared_error(y_train, train_predict))
 #Plotting
 
 #Shift train prediction for plotting
-look_back = 100
+look_back = 500
 trainPredictPlot = np.empty_like(data_close)
 trainPredictPlot[:,:] = np.nan
 trainPredictPlot[look_back:len(train_predict) + look_back, :] = train_predict
@@ -125,17 +125,17 @@ fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
 fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
 st.plotly_chart(fig)
 
-x_input = test_data[len(test_data)-100:].reshape(-1,1)
+x_input = test_data[len(test_data)-500:].reshape(-1,1)
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
 
 lst_output=[]
-n_steps=100
+n_steps=500
 i=0
 while(i<30):
     
-    if(len(temp_input)>100):
+    if(len(temp_input)>500):
         #print(temp_input)
         x_input=np.array(temp_input[1:])
        
@@ -155,10 +155,10 @@ while(i<30):
         lst_output.extend(yhat.tolist())
         i=i+1
     
-day_new = pd.DataFrame(np.arange(1,101))
-day_pred = pd.DataFrame(np.arange(101,131))
+day_new = pd.DataFrame(np.arange(1,501))
+day_pred = pd.DataFrame(np.arange(501,531))
 
-dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-100:]))
+dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-500:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 
 st.write(day_pred)
