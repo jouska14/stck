@@ -129,7 +129,7 @@ st.plotly_chart(fig)
 st.write(len(test_data))
 
 x_input = test_data[1367:].reshape(-1,1)
-st.line_chart(x_input)
+st.write(x_input.shape)
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
