@@ -115,9 +115,8 @@ testPredictPlot = np.empty_like(data_close)
 testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 itdc = pd.DataFrame(scaler.inverse_transform(data_close))
-st.write(itdc)
 itdc.reset_index(inplace=True) 
-itdc.rename(columns={'0':'Close'}, inplace=True)
+st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(itdc, x=data['Date'], y=['index', 0], color="Close")
