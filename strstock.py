@@ -120,7 +120,7 @@ itdc.reset_index(inplace=True)
 itdc.rename(columns={'0':'Close'}, inplace=True)
 #Plot baseline and predictions
 st.write('forecast data')
-fig = px.line(itdc, x=data['Date'], y='Close')
+fig = px.line(itdc, x=data['Date'], y=['index', 0], color="Close")
 
 st.write(fig)
     
