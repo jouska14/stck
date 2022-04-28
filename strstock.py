@@ -122,9 +122,9 @@ st.write(tpp)
 tepp = pd.DataFrame(testPredictPlot)
 st.write('This is how we split the Data')
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=data['Date'], y=itdc[0], name='Closing Price')
-fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict')
-fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict')
+fig.add_trace(go.Scatter(x=data['Date'], y=itdc[0], name='Closing Price'))
+fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
+fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
 st.plotly_chart(fig)
 
 
