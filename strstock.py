@@ -118,7 +118,7 @@ itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 itdc.reset_index(inplace=True) 
 st.write(itdc)
 #Plot baseline and predictions
-st.type(itdc)
+st.write(type(itdc))
 st.write('forecast data')
 fig = px.line(itdc, x='index', y=['index', 0])
 st.write(fig)
