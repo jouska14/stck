@@ -31,12 +31,21 @@ end_date = datetime.date.today().strftime("%Y-%m-%d")
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
 
+# Ticker information
+string_logo = '<img src=%s>' % tickerData.info['logo_url']
+st.markdown(string_logo, unsafe_allow_html=True)
+
+string_name = tickerData.info['longName']
+st.header('**%s**' % string_name)
+
+string_summary = tickerData.info['longBusinessSummary']
+st.info(string_summary)
+
 @st.cache
 def load_data(ticker):
   data = yf.download(ticker,start_date,end_date)
   data.reset_index(inplace=True)
   return data
-
 
 data_load_state = st.text("Load data...")
 data = load_data(tickerSymbol)
