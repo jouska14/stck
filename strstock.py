@@ -30,22 +30,19 @@ end_date = datetime.date.today().strftime("%Y-%m-%d")
 
 stocks = ('AAPL','GOOGL', 'MSFT')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
-tickerData = yf.Ticker(tickerSymbol) # Get ticker data
-tickerDf = tickerData.history(period='1d', start=start_date, end=end_date) 
 
-# Ticker information
-string_logo = '<img src=%s>' % tickerData.info['logo_url']
-st.markdown(string_logo, unsafe_allow_html=True)
+@st.cache
+def load_data(ticker):
+  data = yf.download(ticker,start_date,end_date)
+  data.reset_index(inplace=True)
+  return data
 
-string_name = tickerData.info['longName']
-st.header('**%s**' % string_name)
-
-string_summary = tickerData.info['longBusinessSummary']
-st.info(string_summary)
-
+data_load_state = st.text("Load data...")
+data = load_data(tickerSymbol)
+data_load_state.text("Loading data.... Done!")
 
 st.subheader('Ticker Data')
-st.write(tickerDf)
+st.write(data)
 
 def plot_raw_data():
     fig = go.Figure()
