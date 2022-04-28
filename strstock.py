@@ -88,7 +88,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=8, batch_size=64, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=74, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
@@ -162,8 +162,6 @@ day_pred = pd.DataFrame(np.arange(501,531))
 
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-500:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
-
-st.write(day_pred)
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='New day'))
