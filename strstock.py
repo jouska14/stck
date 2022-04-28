@@ -121,11 +121,11 @@ tepp = pd.DataFrame(testPredictPlot)
 
 agree= st.checkbox('Want to see How the Data is splitted ? ')
 if agree:
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=data['Date'], y=itdc[0], name='Closing Price'))
-fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
-fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
-st.plotly_chart(fig)
+   fig = go.Figure()
+   fig.add_trace(go.Scatter(x=data['Date'], y=itdc[0], name='Closing Price'))
+   fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
+   fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
+   st.plotly_chart(fig)
 
 x_input = test_data[len(test_data)-500:].reshape(-1,1)
 
