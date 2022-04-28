@@ -164,7 +164,7 @@ while(i<60):
     
 day_new=np.arange(1,1407)
 day_pred=np.arange(1407,1467)
-sr.write(day_new)
+st.write(day_new)
 st.wrie(day_pred)
 
 dp1 = scaler.inverse_transform(data_close[5768:])
