@@ -118,7 +118,7 @@ itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
-fig = px.line(data_close ,data['Date'], y=itdc[0])
+fig = px.line(data_close ,data['Date'], y=itdc[0], label={x:'Year' , y:'Closing price')
 st.write(fig)
 
 
