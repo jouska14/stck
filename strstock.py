@@ -170,6 +170,6 @@ dp1 = scaler.inverse_transform(data_close[5768:])
 dp2 = scaler.inverse_transform(lst_output)
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x= 'day_new', y='dp1', mode='lines'))
-fig.add_trace(go.Scatter(x = 'day_pred', y='dp2' ,mode = 'lines'))
+fig.add_trace(go.Scatter(x= day_new, y='dp1', mode='lines'))
+fig.add_trace(go.Scatter(x = day_pred, y='dp2' ,mode = 'lines'))
 fig.show()
