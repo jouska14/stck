@@ -161,7 +161,9 @@ day_pred = pd.DataFrame(np.arange(101,131))
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-100:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 
-fig = go.Figure(layout_yaxis_range=[0,400])
+st.write(day_pred)
+
+fig = go.Figure()
 fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='New day'))
 fig.add_trace(go.Scatter(x=day_pred[0], y=dp2[0] , name='day predict'))
 st.plotly_chart(fig)
