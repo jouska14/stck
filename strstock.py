@@ -117,7 +117,7 @@ testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] =
 itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 st.write(itdc)
 #Plot baseline and predictions
-st.write('forecast data')
+st.write('This is how we split the Data')
 fig = px.line(data_close ,x=data['Date'], y=itdc[0], labels={'x':'Year' , 'y':'Closing price'})
 st.write(fig)
 
