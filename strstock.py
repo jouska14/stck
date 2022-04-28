@@ -126,10 +126,7 @@ fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
 fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
 st.plotly_chart(fig)
 
-st.write(len(test_data))
-
 x_input = test_data[1367:].reshape(-1,1)
-st.write(x_input.shape)
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
@@ -160,7 +157,7 @@ while(i<60):
         i=i+1
     
 day_new = pd.DataFrame(np.arange(1,101))
-day_pred = pd.DataFrame(np.arange(101,1467))
+day_pred = pd.DataFrame(np.arange(101,161))
 
 
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
