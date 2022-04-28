@@ -123,11 +123,9 @@ st.write(tpp)
 tepp = pd.DataFrame(testPredictPlot)
 st.write(tepp)
 st.write('This is how we split the Data')
-fig = px.line(data_close ,x=data['Date'] , y=itdc[0], labels={'x':'Year' , 'y':'Closing price'})
-fig.add_trace(data_close, y=tpp[0], mode='lines')
-fig.add_trace(data_close, y=tepp[0], mode='lines')
-fig.show()
-
+fig = px.line(data_close ,x='Date' , y=itdc[0], labels={'x':'Year' , 'y':'Closing price'})
+fig = px.line(data_close ,x='Date' , y=tpp[0], labels{'x':'Year' , 'y':'Closing price'})
+fig = px.line(data_close ,x='Date' , y=tepp[0], labels{'x':'Year', 'y':'Closing price'})
 
 
     
