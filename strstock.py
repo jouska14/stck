@@ -127,8 +127,9 @@ fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
 st.plotly_chart(fig)
 
 st.write(len(test_data))
-st.line_chart(test_data)
+
 x_input = test_data[1367:].reshape(-1,1)
+st.line_chart(x_input)
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
