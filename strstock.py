@@ -162,16 +162,12 @@ while(i<60):
         lst_output.extend(yhat.tolist())
         i=i+1
     
-day_new=np.arange(1,1407)
-day_pred=np.arange(1407,1467)
-st.write(type(day_new))
-st.write(type(day_pred))
+day_new = pd.DataFrame(np.arange(1,1407))
+day_pred = pd.DataFrame(np.arange(1407,1467))
 
 
-dp1 = scaler.inverse_transform(data_close[5768:])
-dp2 = scaler.inverse_transform(lst_output)
-st.write(type(dp1))
-st.write(type(dp2))
+dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
+dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x= day_new, y=dp1, mode='lines'))
