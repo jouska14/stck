@@ -169,6 +169,8 @@ day_pred = pd.DataFrame(np.arange(1407,1467))
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 fig = px.line(        
-        day_new,#Data Frame
-        x = "[0]", #Columns from the data frame
+        data_close,#Data Frame
+        x = day_new[0], #Columns from the data frame
  )
+px.add_trace(x = day_pred[0])
+st.plotly_chart(fig)
