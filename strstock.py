@@ -89,7 +89,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=64, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=8, batch_size=64, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
@@ -126,7 +126,6 @@ fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
 fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
 st.plotly_chart(fig)
 
-st.write(len(test_data))
 x_input = test_data[len(test_data)-100:].reshape(-1,1)
 
 temp_input=list(x_input)
