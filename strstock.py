@@ -121,7 +121,6 @@ tpp = pd.DataFrame(trainPredictPlot)
 st.write(tpp)
 
 tepp = pd.DataFrame(testPredictPlot)
-st.write(tepp)
 st.write('This is how we split the Data')
 fig = px.line(data_close ,x=data['Date'] , y=itdc[0], labels={'x':'Year' , 'y':'Closing price'})
 st.write(fig)
@@ -130,14 +129,11 @@ st.write(fig1)
 fig2 = px.line(data_close ,x=data['Date'] , y=tepp[0], labels= {'x':'Year', 'y':'Closing price'})
 st.write(fig2)
 
-st.write(len(test_data))
+)
 x_input = test_data[1367:].reshape(-1,1)
-st.write(x_input.shape)
-
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
-st.write(temp_input)
 
 lst_output=[]
 n_steps=100
@@ -170,8 +166,8 @@ while(i<60):
 day_new=np.arange(1,1407)
 day_pred=np.arange(1407,1467)
 
-dp1 = invese_transform(data_close[5768:])
-dp2 = invese_transform(lst_output)
+dp1 = inverse_transform(data_close[5768:])
+dp2 = inverse_transform(lst_output)
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x= 'day_new', y='dp1', mode='lines'))
