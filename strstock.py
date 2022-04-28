@@ -170,4 +170,10 @@ while(i<60):
 day_new=np.arange(1,1407)
 day_pred=np.arange(1407,1467)
 
-st.write(len(data_close))
+dp1 = invese_transform(data_close[5768:])
+dp2 = invese_transform(lst_output)
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x= 'day_new', y='dp1', mode='lines'))
+fig.add_trace(go.Scatter(a = 'day_pred', y='dp2' ,mode = 'lines'))
+fig.show()
