@@ -157,13 +157,13 @@ while(i<60):
         lst_output.extend(yhat.tolist())
         i=i+1
     
-day_new = pd.DataFrame(np.arange(1,1407))
-day_pred = pd.DataFrame(np.arange(1407,1467))
+day_new = pd.DataFrame(np.arange(1,101))
+day_pred = pd.DataFrame(np.arange(101,1467))
 
 
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0]))
+fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0]),  name='New day')
 fig.add_trace(go.Scatter(x=day_pred[0], y=dp2[0]))
 st.plotly_chart(fig)
