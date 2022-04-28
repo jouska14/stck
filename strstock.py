@@ -133,7 +133,7 @@ temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
 
 lst_output=[]
-n_steps=1000
+n_steps=100
 i=0
 while(i<60):
     
