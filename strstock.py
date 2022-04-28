@@ -129,7 +129,7 @@ st.write(fig1)
 fig2 = px.line(data_close ,x=data['Date'] , y=tepp[0], labels= {'x':'Year', 'y':'Closing price'})
 st.write(fig2)
 
-)
+
 x_input = test_data[1367:].reshape(-1,1)
 
 temp_input=list(x_input)
