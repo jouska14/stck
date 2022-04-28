@@ -42,13 +42,13 @@ data = load_data(tickerSymbol)
 data_load_state.text("Loading data.... Done!")
 
 # Ticker information
-string_logo = '<img src=%s>' % tickerSymbol.info['logo_url']
+string_logo = '<img src=%s>' % ticker.info['logo_url']
 st.markdown(string_logo, unsafe_allow_html=True)
 
-string_name = tickerSymbol.info['longName']
+string_name = ticker.info['longName']
 st.header('**%s**' % string_name)
 
-string_summary = tickerSymbol.info['longBusinessSummary']
+string_summary = ticker.info['longBusinessSummary']
 st.info(string_summary)
 
 
