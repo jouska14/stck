@@ -131,6 +131,41 @@ fig2 = px.line(data_close ,x=data['Date'] , y=tepp[0], labels= {'x':'Year', 'y':
 st.write(fig2)
 
 st.write(len(test_data))
+x_input = test_data[1367:].reshape(-1,1)
+st.write(x_input.shape)
 
 
+temp_input=list(x_input)
+temp_input=temp_input[0].tolist()
+st.write(temp_input)
+
+lst_output=[]
+n_steps=100
+i=0
+while(i<60):
     
+    if(len(temp_input)>100):
+        #print(temp_input)
+        x_input=np.array(temp_input[1:])
+        st.write("{} day input {}".format(i,x_input))
+        x_input=x_input.reshape(1,-1)
+        x_input = x_input.reshape((1, n_steps, 1))
+        #print(x_input)
+        yhat = model.predict(x_input, verbose=0)
+        st.write("{} day output {}".format(i,yhat))
+        temp_input.extend(yhat[0].tolist())
+        temp_input=temp_input[1:]
+        #print(temp_input)
+        lst_output.extend(yhat.tolist())
+        i=i+1
+    else:
+        x_input = x_input.reshape((1, n_steps,1))
+        yhat = model.predict(x_input, verbose=0)
+        st.write(yhat[0])
+        temp_input.extend(yhat[0].tolist())
+        st.write(len(temp_input))
+        lst_output.extend(yhat.tolist())
+        i=i+1
+    
+
+st.write(lst_output)
