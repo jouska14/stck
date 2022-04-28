@@ -166,8 +166,8 @@ while(i<60):
 day_new=np.arange(1,1407)
 day_pred=np.arange(1407,1467)
 
-dp1 = inverse_transform(data_close[5768:])
-dp2 = inverse_transform(lst_output)
+dp1 = scaler.inverse_transform(data_close[5768:])
+dp2 = scaler.inverse_transform(lst_output)
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x= 'day_new', y='dp1', mode='lines'))
