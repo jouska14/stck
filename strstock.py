@@ -48,7 +48,7 @@ st.write(data)
 
 def plot_raw_data():
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Stock-Close'))
+    fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Stock-Close', color='Close'))
     fig.update_layout(title="This is the Trend in the Raw Data")
     st.plotly_chart(fig)
   
@@ -116,11 +116,9 @@ testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 itdc.reset_index(inplace=True) 
-st.write(itdc)
 #Plot baseline and predictions
-st.write(type(trainPredictPlot))
-st.write(type(testPredictPlot))
 st.write('forecast data')
 fig = px.line(itdc, x='index', y=['index', 0])
+
 st.write(fig)
     
