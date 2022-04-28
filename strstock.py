@@ -104,7 +104,7 @@ math.sqrt(mean_squared_error(y_train, train_predict))
 #Plotting
 
 #Shift train prediction for plotting
-look_back = 200
+look_back = 100
 trainPredictPlot = np.empty_like(data_close)
 trainPredictPlot[:,:] = np.nan
 trainPredictPlot[look_back:len(train_predict) + look_back, :] = train_predict
