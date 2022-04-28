@@ -114,10 +114,9 @@ testPredictPlot = np.empty_like(data_close)
 testPredictPlot[:,:] = np.nan
 testPredictPlot[len(train_predict) + (look_back * 2)+1:len(data_close) - 1, :] = test_predict
 itdc = pd.DataFrame(scaler.inverse_transform(data_close))
-st.write(itdc)
+
 #Plot baseline and predictions
 tpp = pd.DataFrame(trainPredictPlot)
-st.write(tpp)
 
 tepp = pd.DataFrame(testPredictPlot)
 st.write('This is how we split the Data')
@@ -141,12 +140,11 @@ while(i<60):
     if(len(temp_input)>100):
         #print(temp_input)
         x_input=np.array(temp_input[1:])
-        st.write("{} day input {}".format(i,x_input))
+       
         x_input=x_input.reshape(1,-1)
         x_input = x_input.reshape((1, n_steps, 1))
         #print(x_input)
         yhat = model.predict(x_input, verbose=0)
-        st.write("{} day output {}".format(i,yhat))
         temp_input.extend(yhat[0].tolist())
         temp_input=temp_input[1:]
         #print(temp_input)
@@ -155,9 +153,7 @@ while(i<60):
     else:
         x_input = x_input.reshape((1, n_steps,1))
         yhat = model.predict(x_input, verbose=0)
-        st.write(yhat[0])
         temp_input.extend(yhat[0].tolist())
-        st.write(len(temp_input))
         lst_output.extend(yhat.tolist())
         i=i+1
     
