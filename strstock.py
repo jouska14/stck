@@ -120,5 +120,5 @@ st.write(itdc)
 #Plot baseline and predictions
 st.write('forecast data')
 fig = px.line(itdc, x='index', y=['index', 0])
-st.pyplot(fig)
+st.write(fig)
     
