@@ -118,7 +118,9 @@ itdc = pd.DataFrame(scaler.inverse_transform(data_close))
 tpp = pd.DataFrame(trainPredictPlot)
 
 tepp = pd.DataFrame(testPredictPlot)
-st.write('This is how we split the Data')
+
+agree= st.checkbox('Want to see How the Data is splitted ? ')
+if agree:
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=data['Date'], y=itdc[0], name='Closing Price'))
 fig.add_trace(go.Scatter(x=data['Date'], y=tpp[0], name='Train Predict'))
