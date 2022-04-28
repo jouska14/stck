@@ -130,4 +130,7 @@ st.write(fig1)
 fig2 = px.line(data_close ,x=data['Date'] , y=tepp[0], labels= {'x':'Year', 'y':'Closing price'})
 st.write(fig2)
 
+st.write(len(test_data))
+
+
     
