@@ -167,6 +167,7 @@ while(i<60):
         lst_output.extend(yhat.tolist())
         i=i+1
     
+day_new=np.arange(1,1407)
+day_pred=np.arange(1407,1467)
 
-st.write(lst_output)
-st.write(len(test_data))
+st.write(len(data_close))
