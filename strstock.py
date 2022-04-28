@@ -164,14 +164,14 @@ while(i<60):
     
 day_new=np.arange(1,1407)
 day_pred=np.arange(1407,1467)
-st.write(day_new)
-st.write(day_pred)
+st.write(type(day_new))
+st.write(type(day_pred))
 
 
 dp1 = scaler.inverse_transform(data_close[5768:])
 dp2 = scaler.inverse_transform(lst_output)
-st.write(dp1)
-st.write(dp2) 
+st.write(type(dp1))
+st.write(type(dp2))
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x= day_new, y=dp1, mode='lines'))
