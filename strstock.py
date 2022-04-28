@@ -168,7 +168,7 @@ day_pred = pd.DataFrame(np.arange(1407,1467))
 
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
- fig = px.line(        
+fig = px.line(        
         day_new,#Data Frame
         x = "[0]", #Columns from the data frame
  )
