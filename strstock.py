@@ -119,6 +119,7 @@ st.write(itdc)
 #Plot baseline and predictions
 st.write('This is how we split the Data')
 fig = px.line(data_close ,x=data['Date'], y=itdc[0], labels={'x':'Year' , 'y':'Closing price'})
+px.line(x='trainPredictPlot')
 st.write(fig)
 
 
