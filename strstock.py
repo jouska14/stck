@@ -161,8 +161,7 @@ day_new = pd.DataFrame(np.arange(1,101))
 day_pred = pd.DataFrame(np.arange(101,161))
 
 
-st.write(len(data_close))
-dp1 = pd.DataFrame(scaler.inverse_transform(data_close[5768:]))
+dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-100:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='New day'))
