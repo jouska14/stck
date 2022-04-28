@@ -135,7 +135,7 @@ temp_input=temp_input[0].tolist()
 lst_output=[]
 n_steps=100
 i=0
-while(i<60):
+while(i<30):
     
     if(len(temp_input)>100):
         #print(temp_input)
@@ -158,7 +158,7 @@ while(i<60):
         i=i+1
     
 day_new = pd.DataFrame(np.arange(1,101))
-day_pred = pd.DataFrame(np.arange(101,161))
+day_pred = pd.DataFrame(np.arange(101,131))
 
 
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-100:]))
