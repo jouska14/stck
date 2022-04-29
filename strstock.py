@@ -41,7 +41,7 @@ data_load_state = st.text("Load data...")
 data = load_data(tickerSymbol)
 data_load_state.text("Loading data.... Done!")
 
-st.subheader('Ticker Data')
+st.subheader('Ticker Data of' tickerSymbol) 
 st.write(data)
 
 def plot_raw_data():
@@ -173,7 +173,9 @@ st.plotly_chart(fig)
 df1=data_close.tolist()
 df1.extend(lst_output)
 
-st.line_chart(df1[1000:])
+st.write('More clearer way for Analyzing The Results. )
 
 df1=scaler.inverse_transform(df1).tolist()
 st.line_chart(df1)
+         
+st.write('And Done!!!!  ')
