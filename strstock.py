@@ -160,7 +160,7 @@ while(i<30):
 day_new = pd.DataFrame(np.arange(1,201))
 day_pred = pd.DataFrame(np.arange(201,231))
 
-dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-200:]))
+dp1 = pd.DataFrame(scaler.inverse_transform(data_close[(len(data_close)-200):]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 
 st.write('Hey ! Look what our LSTM  Predicted ....Just a min')
