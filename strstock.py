@@ -174,5 +174,5 @@ df1=data_close.tolist()
 df1.extend(lst_output)
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x = df1[1200:]))
+fig.add_trace(go.Scatter(x = df1[1000:]))
 st.plotly_chart(fig)
