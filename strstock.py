@@ -57,7 +57,7 @@ scaler = MinMaxScaler(feature_range = (0,1))
 data_close = scaler.fit_transform(np.array(data_close).reshape(-1,1))
 
 #Split the data into train and test split
-training_size = int(len(data_close)*0.75)
+training_size = int(len(data_close)*0.65)
 test_size = len(data_close)-training_size
 train_data, test_data = data_close[0:training_size,:], data_close[training_size:len(data_close)]
 
@@ -88,7 +88,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=74, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=66, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
@@ -174,5 +174,5 @@ df1=data_close.tolist()
 df1.extend(lst_output)
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x = df1[1000:]))
+fig.add_trace(go.Scatter(df1[1000:]))
 st.plotly_chart(fig)
