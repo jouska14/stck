@@ -163,7 +163,13 @@ day_pred = pd.DataFrame(np.arange(201,231))
 dp1 = pd.DataFrame(scaler.inverse_transform(data_close[len(data_close)-200:]))
 dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 
+st.write('Hey ! Look what our LSTM  Predicted ....Just a min')
+
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='New day'))
-fig.add_trace(go.Scatter(x=day_pred[0], y=dp2[0] , name='day predict'))
+fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='Prev 100 days Test data '))
+fig.add_trace(go.Scatter(x=day_pred[0], y=dp2[0] , name='30 days predict'))
 st.plotly_chart(fig)
+
+df1=data_close.tolist()
+df1.extend(lst_output)
+st.write(len(df1))
