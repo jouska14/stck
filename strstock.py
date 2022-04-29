@@ -173,7 +173,7 @@ st.plotly_chart(fig)
 df1=data_close.tolist()
 df1.extend(lst_output)
 
-st.write('More clearer way for Analyzing The Results. )
+st.write('More clearer way for Analyzing The Results.' )
 
 df1=scaler.inverse_transform(df1).tolist()
 st.line_chart(df1)
