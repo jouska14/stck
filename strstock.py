@@ -41,7 +41,7 @@ data_load_state = st.text("Load data...")
 data = load_data(tickerSymbol)
 data_load_state.text("Loading data.... Done!")
 
-st.subheader('Ticker Data of', tickerSymbol) 
+st.subheader('Ticker Data ') 
 st.write(data)
 
 def plot_raw_data():
