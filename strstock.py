@@ -28,7 +28,7 @@ st.sidebar.subheader('Choose Your Query Parameter ')
 start_date = st.sidebar.date_input("Start Date", datetime.date(1999,1,1))
 end_date = datetime.date.today().strftime("%Y-%m-%d")
 
-stocks = ('AAPL','GOOGL', 'MSFT')
+stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
 
 @st.cache
