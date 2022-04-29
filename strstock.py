@@ -174,3 +174,6 @@ df1=data_close.tolist()
 df1.extend(lst_output)
 
 st.line_chart(df1[1000:])
+
+df1=scaler.inverse_transform(df1).tolist()
+st.line_chart(df1)
