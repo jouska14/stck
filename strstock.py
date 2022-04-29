@@ -127,7 +127,7 @@ if agree:
    fig.add_trace(go.Scatter(x=data['Date'], y=tepp[0], name='Test Predict'))
    st.plotly_chart(fig)
 
-x_input = test_data[len(test_data)-200:].reshape(-1,1)
+x_input = test_data[len(test_data)-200:].reshape(-1,1,1)
 
 temp_input=list(x_input)
 temp_input=temp_input[0].tolist()
@@ -141,7 +141,7 @@ while(i<30):
         #print(temp_input)
         x_input=np.array(temp_input[1:])
        
-        x_input=x_input.reshape(1,-1)
+        x_input=x_input.reshape(1,-1,1)
         x_input = x_input.reshape((1, n_steps, 1))
         #print(x_input)
         yhat = model.predict(x_input, verbose=0)
