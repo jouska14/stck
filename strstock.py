@@ -88,7 +88,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=66, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=50, batch_size=66, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
