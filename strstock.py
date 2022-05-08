@@ -31,6 +31,8 @@ end_date = datetime.date.today()
 stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
 
+st.write(tickerSymbol.info['longBusinessSummary'])
+
 @st.cache
 def load_data(ticker):
   data = yf.download(ticker,start_date,end_date)
