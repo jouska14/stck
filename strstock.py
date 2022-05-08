@@ -31,7 +31,8 @@ end_date = datetime.date.today()
 stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
 tickerSymbol = st.sidebar.selectbox('Select',stocks)
 
-st.write(tickerSymbol.info['longBusinessSummary'])
+company_summary = tickerSymbol.info['longBusinessSummary']
+st.info(company_summary)
 
 @st.cache
 def load_data(ticker):
