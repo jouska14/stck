@@ -29,14 +29,18 @@ start_date = st.sidebar.date_input("Start Date", datetime.date(2012,1,1))
 end_date = datetime.date.today()
 
 stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
-data_load_state = st.text("Load data...")
+
 tickerSymbol = st.sidebar.selectbox('Stock Ticker',stocks)
-tickerData = yf.Ticker(tickerSymbol)
-tickerDf = tickerData.history(start_date , end_date)
+
+@st.cache
+def load_data(ticker):
+  data = yf.download(ticker,start_date,end_date)
+  data.reset_index(inplace=True)
+  return data
+
+data_load_state = st.text("Load data...")
+data = load_data(tickerSymbol)
 data_load_state.text("Loading data.... Done!")
-
-
-
 
 st.subheader('Ticker Data ') 
 st.write(data)
