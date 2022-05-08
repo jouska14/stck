@@ -31,7 +31,7 @@ end_date = datetime.date.today()
 stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
 data_load_state = st.text("Load data...")
 tickerSymbol = st.sidebar.selectbox('Stock Ticker',stocks)
- tickerData = yf.Ticker(tickerSymbol)
+tickerData = yf.Ticker(tickerSymbol)
 tickerDf = tickerData.history(start_date , end_date)
 data_load_state.text("Loading data.... Done!")
 
