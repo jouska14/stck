@@ -29,16 +29,12 @@ start_date = st.sidebar.date_input("Start Date", datetime.date(2012,1,1))
 end_date = datetime.date.today()
 
 stocks = ('AAPL','GOOGL', 'MSFT', 'LNVGY', 'AMZN','INTC')
-tickerSymbol = st.sidebar.selectbox('Select',stocks)
-data_load_state.text("Loading data.... Done!")
+data_load_state = st.text("Load data...")
 
 tickerData = yf.Ticker(tickerSymbol)
 tickerDf = tickerData.history(start_date , end_date)
+data_load_state.text("Loading data.... Done!")
 
-company_summary = tickerSymbol.info['longBusinessSummary']
-st.info(company_summary)
-
-data_load_state = st.text("Load data...")
 
 
 
