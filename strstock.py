@@ -177,6 +177,9 @@ st.write('More clearer way for Analyzing The Results.' )
 
 df1=scaler.inverse_transform(df1).tolist()
 
-st.line_chart(df1)
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=df1))
+st.plotly_chart(fig)
+
          
 st.write('And Done!!!!  ')
