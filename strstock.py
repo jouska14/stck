@@ -88,7 +88,7 @@ model.add(Dense(1))
 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
 model.summary()   
 
-model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=8, batch_size=66, verbose=1)
+model.fit(x_train,y_train, validation_data=(x_test,y_test), epochs=4, batch_size=70, verbose=1)
 
 #Lets predict and check performance metrics
 train_predict = model.predict(x_train)
@@ -166,8 +166,8 @@ dp2 = pd.DataFrame(scaler.inverse_transform(lst_output))
 st.write('Hey ! Look what our LSTM  Predicted ....Just a min')
 
 fig = go.Figure()
-fig.add_trace(go.Scatter(x=day_new, y=dp1,  name='Prev 100 days Test data '))
-fig.add_trace(go.Scatter(x=day_pred, y=dp2 , name='30 days predict'))
+fig.add_trace(go.Scatter(x=day_new[0], y=dp1[0],  name='Prev 100 days Test data '))
+fig.add_trace(go.Scatter(x=day_pred[0], y=dp2[0], name='30 days predict'))
 st.plotly_chart(fig)
 
 df1=data_close.tolist()
@@ -177,9 +177,6 @@ st.write('More clearer way for Analyzing The Results.' )
 
 df1=scaler.inverse_transform(df1).tolist()
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=df1))
-st.plotly_chart(fig)
-
+st.line_chart(df1)
          
 st.write('And Done!!!!  ')
